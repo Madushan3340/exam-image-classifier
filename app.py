@@ -25,7 +25,7 @@ def preprocess_image(image):
     img = image.resize((224, 224))
     img_array = tf.keras.preprocessing.image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
-    return tf.keras.applications.mobilenet_v2.preprocess_input(img_array)
+    return img_array
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
